@@ -60,9 +60,9 @@ def generate_images(network_pkl, seeds, truncation_psi, outdir, class_idx, dlate
         z = rnd.randn(1, *Gs.input_shape[1:]) # [minibatch, component]
         tflib.set_vars({var: rnd.randn(*var.shape.as_list()) for var in noise_vars}) # [height, width]
         
-        profile_start_time = time.now()
+        profile_start_time = time.time()
         images = Gs.run(z, label, **Gs_kwargs) # [minibatch, height, width, channel]
-        profile_end_time = time.now()
+        profile_end_time = time.time()
         print("Time to generate: {profile_end_time - profile_start_time}")
    
         PIL.Image.fromarray(images[0], 'RGB').save(f'{outdir}/seed{seed:04d}.png')
