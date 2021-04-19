@@ -4,7 +4,7 @@ import argparse
 import json
 import pickle
 import dnnlib
-from dnnlib.tflib as tflib
+import dnnlib.tflib as tflib
 
 def main():
     parser = argparse.ArgumentParser()
@@ -13,6 +13,7 @@ def main():
     
     args = parser.parse_args()
     
+    tflib.init_tf()
     with open(args.network, 'rb') as f:
         _, _, Gs = pickle.load(f)
 
