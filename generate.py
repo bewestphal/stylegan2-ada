@@ -63,7 +63,7 @@ def generate_images(network_pkl, seeds, truncation_psi, outdir, class_idx, dlate
         profile_start_time = time.time()
         images = Gs.run(z, label, **Gs_kwargs) # [minibatch, height, width, channel]
         profile_end_time = time.time()
-        print("Time to generate: {profile_end_time - profile_start_time}")
+        print(f"Time to generate: {profile_end_time - profile_start_time}")
    
         PIL.Image.fromarray(images[0], 'RGB').save(f'{outdir}/seed{seed:04d}.png')
 
