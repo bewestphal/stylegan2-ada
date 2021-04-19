@@ -18,15 +18,7 @@ def main():
         _, _, Gs = pickle.load(f)
     print(f"loaded model: {args.network}")
 
-    tf.keras.models.save_model(
-        Gs,
-        args.destination,
-        overwrite=True,
-        include_optimizer=True,
-        save_format="h5",
-        signatures=None
-    )
-    
+    Gs.save(args.destination)
     print(f"saved model to {args.destination}")
 
     
