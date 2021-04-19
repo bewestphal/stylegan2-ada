@@ -28,3 +28,7 @@ def main():
     )
     
     print(f"saved model to {args.destination}")
+
+    
+if __name__ == "__main__":
+    main()
