@@ -44,7 +44,7 @@ def setup_training_options(
 
     # Base config.
     cfg        = None, # Base config: 'auto' (default), 'stylegan2', 'paper256', 'paper512', 'paper1024', 'cifar', 'cifarbaseline'
-    cifar_tuning = None # Enforce CIFAR-specific architecture tuning: <bool>, default = False
+    cifar_tuning = None, # Enforce CIFAR-specific architecture tuning: <bool>, default = False
     gamma      = None, # Override R1 gamma: <float>, default = depends on cfg
     kimg       = None, # Override training duration: <int>, default = depends on cfg
     cfg_map    = None, # Override config map: <int>, default = depends on cfg
