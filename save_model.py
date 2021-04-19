@@ -23,7 +23,7 @@ def main():
         args.destination,
         overwrite=True,
         include_optimizer=True,
-        save_format="h5,
+        save_format="h5",
         signatures=None
     )
     
